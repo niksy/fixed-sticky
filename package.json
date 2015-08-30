@@ -3,8 +3,10 @@
 	"version": "0.1.6",
 	"description": "A position: sticky polyfill that works with filamentgroup/fixed-fixed for a safer position:fixed fallback.",
 	"main": "fixedsticky.js",
+	"style": "fixedsticky.css",
 	"scripts": {
-		"test": "./node_modules/.bin/grunt test"
+		"test": "./node_modules/.bin/grunt test",
+		"build": "grunt clean && grunt uglify"
 	},
 	"repository": {
 		"type": "git",
@@ -17,6 +19,10 @@
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/filamentgroup/fixed-sticky/issues"
+	},
+	"dependencies": {
+		"jquery": "~1.9.1",
+		"fixed-fixed": "niksy/fixed-fixed#v0.1.2+niksy.0.1.0"
 	},
 	"devDependencies": {
 		"grunt-cli": "~0.1.13",

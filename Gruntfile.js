@@ -65,6 +65,6 @@ module.exports = function(grunt) {
 	// Default task.
 	grunt.registerTask( 'test', [ 'jshint:test', 'qunit' ] );
 	grunt.registerTask( 'lint', [ 'jshint' ] );
-	grunt.registerTask( 'build', [ 'clean', 'jshint:src', 'qunit', 'uglify' ] );
+	grunt.registerTask( 'build', [ 'clean', 'jshint:src', 'uglify' ] );
 	grunt.registerTask( 'default', [ 'jshint', 'qunit' ] );
 };
