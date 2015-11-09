@@ -1,4 +1,17 @@
-;(function( win, $ ) {
+;(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery', 'fixed-fixed'], factory);
+	} else if (typeof module === 'object' && module.exports) {
+		// Node/CommonJS
+		module.exports = factory(require('jquery'), require('fixed-fixed'));
+	} else {
+		// Browser globals
+		factory(jQuery, window.FixedFixed);
+	}
+}(function ($) {
+
+	var win = window;
 
 	function featureTest( property, value, noPrefixes ) {
 		// Thanks Modernizr! https://github.com/phistuck/Modernizr/commit/3fb7217f5f8274e2f11fe6cfeda7cfaf9948a1f5
@@ -152,4 +165,4 @@
 		$( win.document.documentElement ).addClass( S.classes.withoutFixedFixed );
 	}
 
-})( this, jQuery );
+}));
