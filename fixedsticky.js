@@ -123,8 +123,9 @@
 				var $this = $( this );
 				var id = $this.data( S.keys.id );
 				$( win ).unbind( '.fixedsticky' + id );
-				$( this )
-					.removeData( [ S.keys.offset, S.keys.position ] )
+
+				$this
+					.removeData( [ S.keys.offset, S.keys.position, S.keys.id ] )
 					.removeClass( S.classes.active )
 					.next( '.' + S.classes.clone ).remove();
 			});
@@ -140,11 +141,12 @@
 				var _this = this;
 				var id = uniqueIdCounter++;
 				$( this ).data( S.keys.id, id );
+
 				$( win ).bind( 'scroll.fixedsticky' + id, function() {
 					S.update( _this );
 				}).trigger( 'scroll.fixedsticky' + id );
 
-				$( win ).bind( 'resize.fixedsticky' + id, function() {
+				$( win ).bind( 'resize.fixedsticky' + id , function() {
 					if( $el.is( '.' + S.classes.active ) ) {
 						S.update( _this );
 					}
