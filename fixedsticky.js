@@ -122,7 +122,7 @@
 				$( this )
 					.removeData( [ S.keys.offset, S.keys.position ] )
 					.removeClass( S.classes.active )
-					.nextUntil( S.classes.clone ).remove();
+					.next( '.' + S.classes.clone ).remove();
 			});
 		},
 		init: function( el ) {
