@@ -32,6 +32,7 @@
 	var S = {
 		classes: {
 			plugin: 'fixedsticky',
+			inactive: 'fixedsticky-off',
 			active: 'fixedsticky-on',
 			clone: 'fixedsticky-dummy',
 			withoutFixedFixed: 'fixedsticky-withoutfixedfixed'
@@ -66,7 +67,8 @@
 				scroll = S.getScrollTop(),
 				isAlreadyOn = $el.is( '.' + S.classes.active ),
 				toggle = function( turnOn ) {
-					$el[ turnOn ? 'addClass' : 'removeClass' ]( S.classes.active );
+					$el[ turnOn ? 'addClass' : 'removeClass' ]( S.classes.active )
+						[ !turnOn ? 'addClass' : 'removeClass' ]( S.classes.inactive );
 				},
 				viewportHeight = $( window ).height(),
 				position = $el.data( S.keys.position ),
@@ -127,6 +129,7 @@
 				$this
 					.removeData( [ S.keys.offset, S.keys.position, S.keys.id ] )
 					.removeClass( S.classes.active )
+					.removeClass( S.classes.inactive )
 					.next( '.' + S.classes.clone ).remove();
 			});
 		},
