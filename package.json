@@ -1,6 +1,7 @@
 {
   "name": "fixed-sticky",
   "version": "0.1.3+niksy.0.0.5",
+  "private": true,
   "description": "A position: sticky polyfill that works with filamentgroup/fixed-fixed for a safer position:fixed fallback.",
   "main": "fixedsticky.js",
   "style": "fixedsticky.css",
